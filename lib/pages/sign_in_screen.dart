@@ -26,14 +26,24 @@ class SignInScreen extends StatelessWidget {
               padding: EdgeInsetsDirectional.symmetric(horizontal: 19, vertical: 29),
               child: Column(
               children: [
-                CustomTextField(labelText: 'Email'),
-                Container(
-                  margin: EdgeInsets.only(top: 38),
-                  child: CustomTextField(labelText: 'Password', isPassword: true),
+                CustomTextField(
+                  labelText: 'Email',
+                  icon: Icons.mail,
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 38),
-                  child: ButtonComponent(text: 'Login'),
+                  child: CustomTextField(
+                    labelText: 'Password',
+                    isPassword: true,
+                    icon: Icons.lock,
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 38),
+                  child: ButtonComponent(
+                    text: 'Login',
+                    onPressed: () { },
+                  ),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 20),

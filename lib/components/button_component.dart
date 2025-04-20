@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class ButtonComponent extends StatelessWidget {
   final bool secondary;
   final String text;
-  const ButtonComponent({super.key, this.secondary = false, required this.text});
+  final VoidCallback onPressed;
+  const ButtonComponent({super.key, this.secondary = false, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class ButtonComponent extends StatelessWidget {
             width: 1,
           )
         ),
-        onPressed: () { },
+        onPressed: onPressed,
         child: Text(
           text,
           style: TextStyle(

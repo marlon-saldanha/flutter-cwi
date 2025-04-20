@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatefulWidget {
   final String labelText;
   final bool isPassword;
+  final IconData? icon;
   const CustomTextField({
     super.key,
     required this.labelText,
     this.isPassword = false,
+    this.icon,
   });
 
   @override
@@ -48,6 +50,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
         color: _isFocused ? Color(0xff32a873) : Colors.white
       ),
       decoration: InputDecoration(
+        prefixIcon: widget.icon != null ? Icon(
+          widget.icon,
+          color: _isFocused ? Color(0xff32a873) : Colors.white,
+        ) : null,
         suffixIcon:
             widget.isPassword
                 ? IconButton(

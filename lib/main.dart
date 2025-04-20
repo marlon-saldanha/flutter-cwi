@@ -1,3 +1,4 @@
+import 'package:filme_flix/pages/home_screen.dart';
 import 'package:filme_flix/pages/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +13,14 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/sign-in': (context) => SignInScreen(),
+      },
       theme: ThemeData(
         textTheme: ThemeData.dark().textTheme.apply(bodyColor: Colors.white),
       ),
-      // home: HomeScreen(),
-      home: SignInScreen(),
     );
   }
 }
