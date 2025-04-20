@@ -1,5 +1,4 @@
-import 'package:filme_flix/components/button_component.dart';
-import 'package:filme_flix/components/text_field_component.dart';
+import 'package:filme_flix/forms/login_form.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -26,25 +25,7 @@ class SignInScreen extends StatelessWidget {
               padding: EdgeInsetsDirectional.symmetric(horizontal: 19, vertical: 29),
               child: Column(
               children: [
-                CustomTextField(
-                  labelText: 'Email',
-                  icon: Icons.mail,
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 38),
-                  child: CustomTextField(
-                    labelText: 'Password',
-                    isPassword: true,
-                    icon: Icons.lock,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 38),
-                  child: ButtonComponent(
-                    text: 'Login',
-                    onPressed: () { },
-                  ),
-                ),
+                LoginForm(),
                 Container(
                   margin: EdgeInsets.only(top: 20),
                   child: Row(

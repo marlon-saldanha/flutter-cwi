@@ -41,19 +41,27 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       cursorColor: Color(0xff32a873),
       obscureText: _obscure,
       focusNode: _focusNode,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Campo obrigatório!';
+        }
+
+        return null;
+      },
       textCapitalization: TextCapitalization.none,
-      style: TextStyle(
-        color: _isFocused ? Color(0xff32a873) : Colors.white
-      ),
+      style: TextStyle(color: _isFocused ? Color(0xff32a873) : Colors.white),
       decoration: InputDecoration(
-        prefixIcon: widget.icon != null ? Icon(
-          widget.icon,
-          color: _isFocused ? Color(0xff32a873) : Colors.white,
-        ) : null,
+        prefixIcon:
+            widget.icon != null
+                ? Icon(
+                  widget.icon,
+                  color: _isFocused ? Color(0xff32a873) : Colors.white,
+                )
+                : null,
         suffixIcon:
             widget.isPassword
                 ? IconButton(
