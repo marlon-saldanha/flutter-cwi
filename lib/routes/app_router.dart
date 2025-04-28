@@ -2,6 +2,7 @@ import 'package:filme_flix/components/bottom_navigation_bar.dart';
 import 'package:filme_flix/pages/favorite_screen.dart';
 import 'package:filme_flix/pages/home_screen.dart';
 import 'package:filme_flix/pages/landing_screen.dart';
+import 'package:filme_flix/pages/movie_detail.dart';
 import 'package:filme_flix/pages/search_screen.dart';
 import 'package:filme_flix/pages/settings_screen.dart';
 import 'package:filme_flix/pages/sign_in_screen.dart';
@@ -28,7 +29,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       name: 'detail',
       path: '/detail',
-      builder: (context, state) => FavoriteScreen(),
+      builder: (context, state) => MovieDetailScreen(),
     ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) => ScaffoldWithNavbar(navigationShell),
