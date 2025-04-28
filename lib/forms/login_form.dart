@@ -1,6 +1,7 @@
 import 'package:filme_flix/components/button_component.dart';
 import 'package:filme_flix/components/text_field_component.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -31,13 +32,7 @@ class _LoginFormState extends State<LoginForm> {
             margin: EdgeInsets.only(top: 38),
             child: ButtonComponent(
               text: 'Login',
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
-                  );
-                }
-              },
+              onPressed: () => context.go('/home'),
             ),
           ),
         ],

@@ -1,6 +1,6 @@
-import 'package:filme_flix/pages/home_screen.dart';
-import 'package:filme_flix/pages/sign_in_screen.dart';
+import 'package:filme_flix/routes/app_router.dart';
 import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(const MainApp());
@@ -11,13 +11,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return MaterialApp(
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomeScreen(),
-        '/sign-in': (context) => SignInScreen(),
-      },
+    return MaterialApp.router(
+      routerConfig: appRouter,
       theme: ThemeData(
         textTheme: ThemeData.dark().textTheme.apply(bodyColor: Colors.white),
       ),
